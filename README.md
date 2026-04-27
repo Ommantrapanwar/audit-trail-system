@@ -1,94 +1,111 @@
-## Audit Trail System
+# 🛡️ Audit Trail System
 
-A **full-stack Audit Trail System** designed to securely track, monitor, and manage user activities within an organization.
-It ensures **transparency, accountability, and security** by recording every important action performed in the system.
+A secure full-stack Audit Trail System designed to track, monitor, and manage user activities within an organization. It ensures transparency, accountability, and security by recording every important action performed in the system.
 
 ---
 
-##  Overview
+## 📸 Screenshots
+
+### Login Page
+![Login Page](Assests/Login%20Page.png)
+
+---
+
+### Admin Dashboard
+![Admin Dashboard](Assests/Admin%20Dashboard.png)
+
+---
+
+### Employee Dashboard
+![Employee Dashboard](Assests/Employee%20Dashboard.png)
+
+---
+
+### Audit Logs
+![Audit Logs](Assests/Audit%20Logs.png)
+
+---
+
+### Staff Management
+![Staff Management](Assests/Staff%20management.png)
+
+---
+
+## 🎯 Overview
 
 This system captures detailed logs of user activity, including:
 
-* Who performed the action
-* What action was performed
-* When it occurred
-* From where (IP/device)
-* Result of the action
+- Who performed the action  
+- What action was performed  
+- When it occurred  
+- From where (IP/device)  
+- Result of the action  
 
-It also includes **role-based access control**, **security monitoring**, and **automatic detection of suspicious behavior**.
-
----
-
-##  Key Features
-
-##  Authentication & Authorization
-
-* Secure login using hashed passwords (bcrypt)
-* JWT-based authentication
-* Role-Based Access Control (Admin & Staff)
+It ensures full transparency and traceability across all system operations.
 
 ---
 
-## Audit Logging System
+## ✨ Key Features
 
-* Append-only logs (cannot be modified or deleted)
-* Tracks:
-
-  * Login attempts
-  * Employee operations (create/update/delete)
-* Stores `old_values` and `new_values` for full traceability
+### 🔐 Authentication & Authorization
+- Secure login using bcrypt password hashing  
+- JWT-based authentication  
+- Role-Based Access Control (Admin & Staff)
 
 ---
 
-## Employee Management
-
-* Full CRUD operations
-* Search and filtering
-* Department-based organization
-* All actions are logged automatically
-
----
-
-## Admin Dashboard
-
-* View all audit logs
-* Filter logs by user, action, and date
-* Search logs by keyword
-* Export logs as CSV
+### 📜 Audit Logging System
+- Append-only logs (cannot be modified or deleted)
+- Tracks:
+  - Login attempts  
+  - Employee CRUD operations  
+- Stores `old_values` and `new_values` for full traceability  
 
 ---
 
-## Security Monitoring
-
-* Detects suspicious activity:
-
-  * Multiple failed login attempts (within 10 minutes)
-  * Excessive deletions (≥3 within 60 seconds)
-* Automatically blocks suspicious users
-* Admin can review and unblock users
+### 👨‍💼 Employee Management
+- Full CRUD operations  
+- Search and filtering  
+- Department-based organization  
+- All actions automatically logged  
 
 ---
 
-## Tech Stack
+### 📊 Admin Dashboard
+- View all audit logs  
+- Filter by user, action, and date  
+- Search logs by keyword  
+- Export logs as CSV  
+
+---
+
+### 🚨 Security Monitoring
+Detects:
+- Multiple failed login attempts  
+- Excessive deletions  
+- Suspicious activity patterns  
+
+Automatically blocks suspicious users and allows admin review.
+
+---
+
+## 🛠️ Tech Stack
 
 **Backend**
-
-* Node.js
-* Express.js
+- Node.js  
+- Express.js  
 
 **Database**
-
-* MongoDB (Atlas)
+- MongoDB Atlas  
 
 **Frontend**
-
-* HTML
-* CSS
-* Vanilla JavaScript
+- HTML  
+- CSS  
+- Vanilla JavaScript  
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 audit-trail-system/
