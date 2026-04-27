@@ -64,10 +64,10 @@ async function ensureEmployees() {
 async function main() {
   await mongoose.connect(MONGO_URI);
   // Cleanup old demo/admin usernames to keep seed deterministic
-  await User.deleteOne({ username: { $regex: /^prakhar$/i } }).catch(() => {});
-  await upsertUser({ username: "prakhar agarwal", password: "admin123", role: "admin" });
+  await User.deleteOne({ username: { $regex: /^om$/i } }).catch(() => {});
+  await upsertUser({ username: "om mantra panwar", password: "admin123", role: "admin" });
   await upsertUser({ username: "riya malhotra", password: "staff123", role: "staff" });
-  await upsertUser({ username: "om panwar mantra", password: "staff123", role: "staff" });
+  await upsertUser({ username: "prakhar agarwal", password: "staff123", role: "staff" });
   await upsertUser({ username: "nishika", password: "staff123", role: "staff" });
   await ensureEmployees();
   const safeUri = String(MONGO_URI).replace(/\/\/([^@]+)@/g, "//***:***@");
