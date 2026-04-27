@@ -30,9 +30,9 @@ audit-trail-system/
 
 ### Seeded credentials (via seed script)
 
-- Admin: `prakhar agarwal` / `admin123`
+- Admin: `om mantra panwar` / `admin123`
 - Staff: `riya malhotra` / `staff123`
-- Staff: `om panwar mantra` / `staff123`
+- Staff: `prakhar agarwal` / `staff123`
 - Staff: `nishika` / `staff123`
 
 ## Backend Setup (Node.js + Express)
