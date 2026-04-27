@@ -1,11 +1,11 @@
-# 🚀 Audit Trail System
+## Audit Trail System
 
 A **full-stack Audit Trail System** designed to securely track, monitor, and manage user activities within an organization.
 It ensures **transparency, accountability, and security** by recording every important action performed in the system.
 
 ---
 
-## 🔍 Overview
+##  Overview
 
 This system captures detailed logs of user activity, including:
 
@@ -19,9 +19,9 @@ It also includes **role-based access control**, **security monitoring**, and **a
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### 🔐 Authentication & Authorization
+##  Authentication & Authorization
 
 * Secure login using hashed passwords (bcrypt)
 * JWT-based authentication
@@ -29,7 +29,7 @@ It also includes **role-based access control**, **security monitoring**, and **a
 
 ---
 
-### 🧾 Audit Logging System
+## Audit Logging System
 
 * Append-only logs (cannot be modified or deleted)
 * Tracks:
@@ -40,7 +40,7 @@ It also includes **role-based access control**, **security monitoring**, and **a
 
 ---
 
-### 👨‍💼 Employee Management
+## Employee Management
 
 * Full CRUD operations
 * Search and filtering
@@ -49,7 +49,7 @@ It also includes **role-based access control**, **security monitoring**, and **a
 
 ---
 
-### 📊 Admin Dashboard
+## Admin Dashboard
 
 * View all audit logs
 * Filter logs by user, action, and date
@@ -58,7 +58,7 @@ It also includes **role-based access control**, **security monitoring**, and **a
 
 ---
 
-### ⚠️ Security Monitoring
+## Security Monitoring
 
 * Detects suspicious activity:
 
@@ -69,7 +69,7 @@ It also includes **role-based access control**, **security monitoring**, and **a
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 **Backend**
 
@@ -88,7 +88,7 @@ It also includes **role-based access control**, **security monitoring**, and **a
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 audit-trail-system/
@@ -101,7 +101,7 @@ audit-trail-system/
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ### 1️⃣ Clone the repository
 
@@ -163,18 +163,18 @@ http://127.0.0.1:5001
 
 ---
 
-## 👤 Seeded Users (for testing)
+##  Seeded Users (for testing)
 
 Pre-configured users are available for quick testing:
 
-### 🔑 Admin
+###  Admin
 
 * **Username:** om mantra panwar 
 * **Password:** admin123
 
 ---
 
-### 👨‍💼 Staff Users
+###  Staff Users
 
 * **Username:** riya malhotra
 
@@ -194,7 +194,7 @@ Pre-configured users are available for quick testing:
 
 ---
 
-### ⚠️ Notes
+###  Notes
 
 * Run the seed script before login:
 
@@ -209,7 +209,7 @@ Pre-configured users are available for quick testing:
 
 ---
 
-## 📚 What I Learned
+##  What I Learned
 
 * Building secure authentication systems using JWT
 * Implementing role-based access control (RBAC)
@@ -220,13 +220,13 @@ Pre-configured users are available for quick testing:
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Om Panwar**
 
 ---
 
-## 🚀 Future Improvements
+##  Future Improvements
 
 * Real-time alerts for suspicious activities
 * UI upgrade using modern frameworks (React)
