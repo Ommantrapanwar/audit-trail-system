@@ -1,113 +1,236 @@
-# Audit Trail DBMS (Express + MongoDB + Vanilla JS)
+# 🚀 Audit Trail System
 
-An Audit Trail DBMS that records **who did what, when, from where, and with what result**. It supports secure authentication, role-based access control, append-only audit logs (enforced at the database level), filtering/searching, CSV export, employee CRUD (sample entity), and admin security monitoring (auto-block on suspicious deletion bursts).
+A **full-stack Audit Trail System** designed to securely track, monitor, and manage user activities within an organization.
+It ensures **transparency, accountability, and security** by recording every important action performed in the system.
 
-## Features
+---
 
-- **MongoDB-backed append-only audit log** (`audit_logs`) (application enforces append-only)
-- **Auth**: username/password with **bcrypt** hashing
-- **RBAC**: `admin` can view/export/filter logs and manage security alerts; `staff` cannot access the audit logs page/APIs
-- **Employee CRUD**: create/update/delete employees with audit logging including `old_values`/`new_values`
-- **Admin dashboards**: employee dashboard + audit log viewer + security panel
-- **Suspicious activity**
-  - Multiple failed logins from same IP+username within 10 minutes → status `SUSPICIOUS`
-  - Excess employee deletions (≥3 within 60s) → account auto-block + security alert
+## 🔍 Overview
 
-## Project Structure
+This system captures detailed logs of user activity, including:
+
+* Who performed the action
+* What action was performed
+* When it occurred
+* From where (IP/device)
+* Result of the action
+
+It also includes **role-based access control**, **security monitoring**, and **automatic detection of suspicious behavior**.
+
+---
+
+## ✨ Key Features
+
+### 🔐 Authentication & Authorization
+
+* Secure login using hashed passwords (bcrypt)
+* JWT-based authentication
+* Role-Based Access Control (Admin & Staff)
+
+---
+
+### 🧾 Audit Logging System
+
+* Append-only logs (cannot be modified or deleted)
+* Tracks:
+
+  * Login attempts
+  * Employee operations (create/update/delete)
+* Stores `old_values` and `new_values` for full traceability
+
+---
+
+### 👨‍💼 Employee Management
+
+* Full CRUD operations
+* Search and filtering
+* Department-based organization
+* All actions are logged automatically
+
+---
+
+### 📊 Admin Dashboard
+
+* View all audit logs
+* Filter logs by user, action, and date
+* Search logs by keyword
+* Export logs as CSV
+
+---
+
+### ⚠️ Security Monitoring
+
+* Detects suspicious activity:
+
+  * Multiple failed login attempts (within 10 minutes)
+  * Excessive deletions (≥3 within 60 seconds)
+* Automatically blocks suspicious users
+* Admin can review and unblock users
+
+---
+
+## 🛠 Tech Stack
+
+**Backend**
+
+* Node.js
+* Express.js
+
+**Database**
+
+* MongoDB (Atlas)
+
+**Frontend**
+
+* HTML
+* CSS
+* Vanilla JavaScript
+
+---
+
+## 📁 Project Structure
 
 ```
 audit-trail-system/
-  backend/
-  frontend/
-  database/
-  README.md
+│
+├── backend/        # Server, APIs, database logic
+├── frontend/       # UI (HTML, CSS, JS)
+├── api/            # API entry (for deployment)
+├── README.md
 ```
 
-## Prerequisites
+---
 
-- Node.js 18+
-- MongoDB (local or Atlas)
+## ⚙️ Setup Instructions
 
-### Seeded credentials (via seed script)
+### 1️⃣ Clone the repository
 
+<<<<<<< HEAD
 - Admin: `om mantra panwar` / `admin123`
 - Staff: `riya malhotra` / `staff123`
 - Staff: `prakhar agarwal` / `staff123`
 - Staff: `nishika` / `staff123`
+=======
+```
+git clone https://github.com/Ommantrapanwar/audit-trail-system.git
+```
+>>>>>>> f819bf3 (Updated  README)
 
-## Backend Setup (Node.js + Express)
+---
 
-From `audit-trail-system/backend/`:
+### 2️⃣ Install dependencies
 
-```bash
+```
+cd backend
 npm install
 ```
 
-Create environment variables:
+---
 
-```bash
-cp .env.example .env
-# put your MongoDB Atlas URI in .env (backend reads backend/.env)
+### 3️⃣ Configure environment variables
+
+Create a `.env` file in `backend/`:
+
+```
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
 ```
 
-Seed the database (creates users + sample employees):
+---
 
-```bash
+### 4️⃣ Seed the database
+
+```
 node scripts/seed.js
 ```
 
-Run the backend:
+---
 
-```bash
+### 5️⃣ Run the server
+
+```
 npm start
 ```
 
-Open:
+---
 
-- Login: http://127.0.0.1:<PORT>/
-- Dashboard: http://127.0.0.1:<PORT>/dashboard
-- Audit logs (admin): http://127.0.0.1:<PORT>/audit-logs
+### 6️⃣ Open the application
 
-## Frontend
+```
+http://127.0.0.1:5001
+```
 
-The frontend is static HTML/CSS/JS in `frontend/` and is served by the Express app for convenience.
+---
 
-## API Summary
+## 👤 Seeded Users (for testing)
 
-Authentication:
+Pre-configured users are available for quick testing:
 
-- `POST /api/login`
-- `POST /api/logout`
-- `POST /api/register` (admin only)
-- `GET /api/me`
-- Aliases: `POST /api/auth/login`, `POST /api/auth/logout`, `GET /api/auth/session`
+### 🔑 Admin
 
-Admin logs:
+* **Username:** om mantra panwar 
+* **Password:** admin123
 
-- `GET /api/logs`
-- `GET /api/logs/filter?user=&action=&start=&end=`
-- `GET /api/logs/search?q=keyword`
-- `GET /api/logs/export.csv` (supports `user`, `action`, `start`, `end`, `q`)
-- Aliases: `GET /api/audit/logs` (+ `/filter`, `/search`)
+---
 
-Employees:
+### 👨‍💼 Staff Users
 
-- `GET /api/employees?search=&department=`
-- `POST /api/employees`
-- `PUT /api/employees`
-- `DELETE /api/employees?id=`
+* **Username:** riya malhotra
 
-Security (admin):
+* **Password:** staff123
 
-- `GET /api/admin/security`
-- `POST /api/admin/security` with `{ "action": "unblock", "user_id": 123 }` or `{ "action": "mark_read", "alert_id": 456 }`
+* **Username:** om panwar mantra
 
-## Notes on Log Integrity
+* **Password:** staff123
 
-- Audit logs are **append-only at the application level**: the backend never exposes endpoints to update/delete audit logs.
-- For stronger guarantees in production, run MongoDB with restricted roles that disallow deletes/updates on the `auditlogs` collection.
+* **Username:** nishika
 
-## Local Troubleshooting
+* **Password:** staff123
 
-- If you see DB connection errors, verify `MONGO_URI` in `backend/.env` and your Atlas IP allowlist.
-- If login fails for seeded users, re-run `node scripts/seed.js` from `backend/`.
+* **Username:** prakhar agarwal
+
+* **Password:** staff123
+
+---
+
+### ⚠️ Notes
+
+* Run the seed script before login:
+
+  ```
+  node scripts/seed.js
+  ```
+* Admin users can:
+
+  * Access audit logs
+  * Manage security alerts
+* Staff users have restricted access
+
+---
+
+## 📚 What I Learned
+
+* Building secure authentication systems using JWT
+* Implementing role-based access control (RBAC)
+* Designing audit logging systems
+* Working with MongoDB Atlas
+* Developing REST APIs using Express
+* Debugging and integrating full-stack applications
+
+---
+
+## 👨‍💻 Author
+
+**Om Panwar**
+
+---
+
+## 🚀 Future Improvements
+
+* Real-time alerts for suspicious activities
+* UI upgrade using modern frameworks (React)
+* Advanced analytics dashboard
+* Role management interface
+
+---
