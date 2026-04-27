@@ -105,7 +105,7 @@ audit-trail-system/
 
 ### 1️⃣ Clone the repository
 
-<<<<<<< HEAD
+
 - Admin: `om mantra panwar` / `admin123`
 - Staff: `riya malhotra` / `staff123`
 - Staff: `prakhar agarwal` / `staff123`
@@ -114,7 +114,7 @@ audit-trail-system/
 ```
 git clone https://github.com/Ommantrapanwar/audit-trail-system.git
 ```
->>>>>>> f819bf3 (Updated  README)
+
 
 ---
 
