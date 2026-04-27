@@ -110,7 +110,7 @@ audit-trail-system/
 - Staff: `riya malhotra` / `staff123`
 - Staff: `prakhar agarwal` / `staff123`
 - Staff: `nishika` / `staff123`
-=======
+
 ```
 git clone https://github.com/Ommantrapanwar/audit-trail-system.git
 ```
