@@ -7,27 +7,27 @@ A secure full-stack Audit Trail System designed to track, monitor, and manage us
 ## 📸 Screenshots
 
 ### Login Page
-![Login Page](Assests/Login%20Page.png)
+![Login Page](Assets/Login-Page.png)
 
 ---
 
 ### Admin Dashboard
-![Admin Dashboard](Assests/Admin%20Dashboard.png)
+![Admin Dashboard](Assets/Admin-Dashboard.png)
 
 ---
 
 ### Employee Dashboard
-![Employee Dashboard](Assests/Employee%20Dashboard.png)
+![Employee Dashboard](Assets/Employee-Dashboard.png)
 
 ---
 
 ### Audit Logs
-![Audit Logs](Assests/Audit%20Logs.png)
+![Audit Logs](Assets/Audit-Logs.png)
 
 ---
 
 ### Staff Management
-![Staff Management](Assests/Staff%20management.png)
+![Staff Management](Assets/Staff-Management.png)
 
 ---
 
